@@ -1,20 +1,122 @@
 body {
   margin: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+ol,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 #canvas {
-  background: green;
+  background: white;
+  display: block;
 }
 .actions {
   position: fixed;
   top: 0;
   left: 0;
 }
-.actions > #brush{
-    display: none;
+.actions svg {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 10px 7px;
+  transition: all 0.3s;
 }
-.actions.x > #brush{
-    display: inline-block;
+.actions svg.active{
+  transform: scale(1.2);
 }
-.actions.x > #eraser{
-    display: none;
+.colors{
+  background: rgba(0,0,0,0.1);
+  border-radius: 20px;
+  position: fixed;
+  top: 7px;
+  left: 180px;
+  transition: all 0.3s;
+}
+.colors li{
+  border-radius: 50%;
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin: 7px 6px;
+  transition: all 0.3s;
+}
+.colors li.active{
+  box-shadow: 0 0 5px rgba(8,8,8,1);
+  transform: scale(1.2);
+}
+.colors li.black{
+  background: black;
+}
+.colors li.red{
+  background: red;
+}
+.colors li.blue{
+  background: blue;
+}
+.colors li.wheat{
+  background: wheat;
+}
+.colors li.green{
+  background: green
+}
+.colors li.purple{
+  background: purple;
+}
+.sizes{
+  background: rgba(0,0,0,0.1);
+  border-radius: 20px;
+  position: fixed;
+  top: 45px;
+  left: 180px;
+  transition: all 0.3s;
+}
+.sizes li{
+  float: left;
+  margin: 4px 13px;
+  background: black;
+  transition: all 0.3s;
+}
+.sizes li.active{
+  box-shadow: 0 0 5px rgba(8,8,8,1);
+  transform: scale(1.2);
+}
+.sizes li:nth-child(1){
+  height: 23px;
+  width: 1px;
+}
+.sizes li:nth-child(2){
+  height: 23px;
+  width: 2px;
+}
+.sizes li:nth-child(3){
+  height: 23px;
+  width: 3px;
+}
+.sizes li:nth-child(4){
+  height: 23px;
+  width: 4px;
+}
+.sizes li:nth-child(5){
+  height: 23px;
+  width: 5px;
+}
+.sizes li:nth-child(6){
+  height: 23px;
+  width:6px;
 }
